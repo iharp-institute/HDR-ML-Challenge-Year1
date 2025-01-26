@@ -40,6 +40,21 @@ def get_sla_array(files):
 
     return X
 
+def get_t_array(files):
+    """
+    Read the NetCDF files and extract the 'sla' variable
+    """
+    # Read the NetCDF files
+    ds = xr.open_dataset(files)
+
+    # Extract the 'sla' variable
+    X = ds['time'].values
+
+    # Close the dataset
+    ds.close()
+
+    return X
+
 
 def get_prediction_data():
 
@@ -47,12 +62,13 @@ def get_prediction_data():
     # Read in the nc files in the input_dir as a list
     test_data_files = [os.path.join(input_dir, f) for f in os.listdir(input_dir) if f.endswith('.nc')]
     test_data_files.sort()
+    print("Get data: " + str(len(test_data_files)))
 
-    # Read the NetCDF files and extract the 'sla' variable as a list of numpy arrays
+    # Read the NetCDF files and extract the 't', 'sla' variable as a list of numpy arrays
     X_test = [get_sla_array(f) for f in test_data_files]
+    t_test = [get_t_array(f) for f in test_data_files]
 
-
-    return X_test
+    return X_test, t_test
 
 
 def install_from_whitelist(req_file):
@@ -103,21 +119,18 @@ def print_pretty(text):
     print("-------------------")
 
 
-def save_prediction(prediction_prob):
+def save_prediction(t_test, prediction_prob):
 
     prediction_file = os.path.join(output_dir, 'test.predictions')
 
-    predictions = np.array(prediction_prob)
-
-
-
-    with open(prediction_file, 'w') as f:
-        for ind, lbl in enumerate(predictions):
-            str_label = ' '.join(map(str, lbl))  # Remove brackets, just space-separated numbers
-            if ind < len(predictions) - 1:
-                f.write(str_label + "\n")
-            else:
-                f.write(str_label)  # No newline for the last line
+    df_t = pd.DataFrame(t_test, columns=['time'])
+    df_pred = pd.DataFrame(prediction_prob, columns=['Atlantic_City', 'Baltimore', 'Eastport', 'Fort_Pulaski', 
+                                                       'Lewes', 'New_London', 'Newport', 'Portland', 'Sandy_Hook', 
+                                                       'Sewells_Point', 'The_Battery', 'Washington'])
+    # Merge the two dataframes
+    df = pd.concat([df_t, df_pred], axis=1)
+    print(df.head())
+    df.to_pickle(prediction_file)
 
 
 def main():
@@ -140,8 +153,7 @@ def main():
     start = time.time()
 
     print_pretty('Reading Data')
-    X_tests = get_prediction_data()
-
+    X_tests, t_test = get_prediction_data()
 
     print_pretty('Starting Learning')
     m = Model()
@@ -149,9 +161,12 @@ def main():
     print_pretty('Making Prediction')
     # Loop over all events and predict if the events has an anomaly
     prediction_prob = [ m.predict(X_test) for X_test in X_tests ] 
+    all_prediction = np.concatenate(prediction_prob, axis=0)
+    # print shape of the prediction
+    print("Shape of output: " + str(all_prediction.shape))
 
     print_pretty('Saving Prediction')
-    save_prediction(prediction_prob)
+    save_prediction(t_test, all_prediction)
 
     duration = time.time() - start
     print_pretty(f'Total duration: {duration}')
