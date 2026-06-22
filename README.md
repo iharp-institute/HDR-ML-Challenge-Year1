@@ -1,5 +1,4 @@
-# Harnessing the Data Revolution - Machine Learning Challenge 
-# Theme: Anomaly Detection
+# Harnessing the Data Revolution - Machine Learning Challenge (Theme: Anomaly Detection)
 This is a repository for the Anomaly Detection challenge for the NSF HDR Institute for Harnessing Data and Model Revolution in the Polar Regions (iHARP).
 
 # Problem
