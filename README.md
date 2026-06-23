@@ -9,10 +9,16 @@ The iHARP anomaly prediction and detection challenge aims to predict anomalous s
 
 
 # Training Data
-This challenge leverages a comprehensive training dataset spanning 20 years, consisting of daily sea level measurements from 12 coastal stations along the US East Coast and sea-level elevation values in the North Atlantic.
-
+This challenge leverages a comprehensive training dataset spanning 20 years.
 *Summary of Files:*
-CSV Format as 'Training_Anomalies_Station_Data' -> This data represents buoy hourly sea-level measurements from 12 tide gauge stations along the US Coast from 1993 to 2013 (for 20 years). Each station's data is a separate time series, labeled with known anomalies.
-NetCDF Format as 'Copernicus_ENA_Satelite_Maps_Training_Data' -> These are NetDCF files containing the sea-level elevation values on the Atlantic Ocean from 1993 to 2013 (for 20 years) for the 12 coastal stations. 
-One can utilize either the CSV or NetCDF files*
+1. CSV Format as 'Training_Anomalies_Station_Data' -> This data represents buoy hourly sea-level measurements from 12 tide gauge stations along the US Coast from 1993 to 2013 (for 20 years). Each station's data is a separate time series, labeled with known anomalies.
+2. NetCDF Format as 'Copernicus_ENA_Satelite_Maps_Training_Data' -> Alternatively, these are NetDCF files containing the sea-level elevation values on the Atlantic Ocean from 1993 to 2013 (for 20 years) for the 12 coastal stations. 
+*One can utilize either the CSV or NetCDF files*
+
+# Test Data
+Model submissions are evaluated on a test set of 10 years from 2014 to 2023 for the same coastal stations.
+The dataset is available here.
+
+
+
 
