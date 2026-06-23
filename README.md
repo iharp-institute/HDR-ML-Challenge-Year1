@@ -10,8 +10,11 @@ The iHARP anomaly prediction and detection challenge aims to predict anomalous s
 # Training Data
 This challenge leverages a comprehensive training dataset spanning 20 years.
 
-1. CSV Format as 'Training_Anomalies_Station_Data' -> This data represents buoy hourly sea-level measurements from 12 tide gauge stations along the US East Coast from 1993 to 2013 (for 20 years). Each station's data is a separate time series, labeled with known anomalies.
-2. NetCDF Format as 'Copernicus_ENA_Satelite_Maps_Training_Data' -> For additional reference, NetDCF files are provided containing the sea-level elevation values on the Atlantic Ocean for the same period of 1993 to 2013 (for 20 years) for the 12 coastal stations. Note: The satellite data gives an image of the sea level over the whole ocean basin, but does not give us an accurate measure of the sea level at the coast, as the satellite cannot measure the sea level close to land.
+1. # CSV Format as 'Training_Anomalies_Station_Data'
+This data represents buoy hourly sea-level measurements from 12 tide gauge stations along the US East Coast from 1993 to 2013 (for 20 years). Each station's data is a separate time series, labeled with known anomalies.
+
+2. # NetCDF Format as 'Copernicus_ENA_Satelite_Maps_Training_Data' 
+For additional reference, NetDCF files are provided containing the sea-level elevation values on the Atlantic Ocean for the same period of 1993 to 2013 (for 20 years) for the 12 coastal stations. Note: The satellite data gives an image of the sea level over the whole ocean basin, but does not give us an accurate measure of the sea level at the coast, as the satellite cannot measure the sea level close to land.
 
 
 # Test Data
