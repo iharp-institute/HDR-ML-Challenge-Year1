@@ -13,11 +13,17 @@ The iHARP challenge dataset consists of the buoy hourly sea-level measurements f
 
 # Training Data
 
-1. CSV Format as 'Training_Anomalies_Station_Data'
-Here, each station's data is a separate time series, labeled with known anomalies.
+1. CSV Format as 'Training_Anomalies_Station_Data' --> Refer to the input_data folder in this repository.
+   
+Here, each station's data is a separate time series, labeled with known anomalies. 
 
-2. NetCDF Format as 'Copernicus_ENA_Satelite_Maps_Training_Data' 
+3. NetCDF Format as 'Copernicus_ENA_Satelite_Maps_Training_Data' 
+
 For additional reference, NetDCF files are provided containing the sea-level elevation values on the Atlantic Ocean for the same period. Note: The satellite data provides an image of sea level over the entire ocean basin but does not give an accurate measure of sea level along the coast, as the satellite cannot measure it near land.
+
+--> Refer to the metadata to understand the structure of each file
+
+--> Due to the size of the data, refer to the iHarp_Zenodo_Repo. 
 
 # Test Data
 Submitted models are evaluated on a held-out test set spanning 10 years, from 2014 to 2023, for the same coastal stations.
