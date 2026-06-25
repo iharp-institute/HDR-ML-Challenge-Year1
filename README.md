@@ -51,6 +51,8 @@ The iHARP challenge dataset consists of the buoy hourly sea-level measurements f
    2. Recall = True Positives / (True Positives + False Negatives)
    3. F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
 
+# Questions
+Please open an issue on the GitHub issues page.
 
 # License
 This project is licensed under the MIT License.
