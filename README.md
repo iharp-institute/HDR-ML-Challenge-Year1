@@ -30,8 +30,10 @@ The iHARP challenge dataset consists of the buoy hourly sea-level measurements f
    Submitted models are evaluated on a held-out test set spanning 10 years, from 2014 to 2023, for the same coastal stations.
 
 # Model Submission
-   # 1. Baseline Model
-   For a demo model, refer to the *baseline_model* in this repository.
+   # 1. Example Model
+   --> For a *demo model*, refer to the *baseline_model* in this repository.
+
+   --> For a sample model structure, which will be ingested in the challenge platform, refer to 'codabench_files' in this          repository. Other programs to facilitate the ingestion and scoring of submitted models on Codabench are also                 available.
    
    # 2. Expected Output
    A single .csv file where each row should represent a single day/date. The columns should show station locations where       the anomalies are being detected. Binary values (0 for false, 1 for true) to predict the presence of an anomaly in each      of the stations. 
