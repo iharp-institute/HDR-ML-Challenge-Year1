@@ -52,5 +52,6 @@ The iHARP challenge dataset consists of the buoy hourly sea-level measurements f
    3. F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
 
 
-
+# License
+This project is licensed under the MIT License.
 
