@@ -31,10 +31,10 @@ The iHARP challenge dataset consists of the buoy hourly sea-level measurements f
 
 # Model Submission
    # 1. Baseline Model
-   A trained model in a python file model.py.
+   For a demo model, refer to the *baseline_model* in this repository.
    
    # 2. Expected Output
-   A single .csv file where each row should represents a single day/date. The columns should show station locations where       the anomalies are being detected. Binary values (0 for false, 1 for true) to predict the presence of an anomaly in each      of the stations. 
+   A single .csv file where each row should represent a single day/date. The columns should show station locations where       the anomalies are being detected. Binary values (0 for false, 1 for true) to predict the presence of an anomaly in each      of the stations. 
 
   --> Refer to the reference_data folder to understand the structure of each file. See submission sample - *'demo_sla.csv'*.
 
