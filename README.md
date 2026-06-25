@@ -40,6 +40,13 @@ The iHARP challenge dataset consists of the buoy hourly sea-level measurements f
 
   --> Refer to the reference_data folder to understand the structure of each file. See submission sample - *'demo_sla.csv'*.
 
+# Evaluation Metrics
+The performance of the anomaly detection models will be evaluated using the following metrics: 
+
+1. Precision = True Positives / (True Positives + False Positives)
+2. Recall = True Positives / (True Positives + False Negatives)
+3. F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+
 
 
 
