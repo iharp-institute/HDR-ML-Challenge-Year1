@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/890956323.svg)](https://doi.org/10.5281/zenodo.21045936)
 # Harnessing the Data Revolution - Machine Learning Challenge (Theme: Anomaly Detection)
 This is a repository for the Anomaly Detection challenge for the NSF HDR Institute for Harnessing Data and Model Revolution in the Polar Regions (iHARP).
 
